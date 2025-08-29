@@ -16,7 +16,7 @@ while IFS= read -r url; do
                 exec bash
             '
         " &
-        sleep 10
+        sleep 20
     fi
     i=$((i+1))
 done < "$BASE_DIR/links.txt"
