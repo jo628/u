@@ -11,7 +11,7 @@ while IFS= read -r url; do
         terminator --working-directory="$folder" -e "
             bash -c '
                 echo \"Running main.py for $url\";
-                python3 main.py -c ${url}learn/ -sc --browser chrome -q 720 --download-assets --download-captions;
+                export PATH="$HOME/.local/bin:$PATH" && python3 main.py -c ${url}learn/ -sc --browser chrome -q 720 --download-assets --download-captions;
                 echo \"Finished for $url\";
                 exec bash
             '
